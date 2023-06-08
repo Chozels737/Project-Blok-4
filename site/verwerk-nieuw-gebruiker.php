@@ -24,8 +24,8 @@ require "database.php";
 //$id = mysqli_insert_id($conn);
 
 
-if ($rol == "admin")
-    $sql = "INSERT INTO admin (in dienst)
+if ($rol == "admin") {
+    $sql = "INSERT INTO admin (indienst)
     VALUES('$indienst')";
     mysqli_query($conn, $sql);
     $id = mysqli_insert_id($conn);
@@ -34,30 +34,28 @@ if ($rol == "admin")
     VALUES ('$voornaam', '$tussenvoegsel', '$achternaam', '$geslacht', '$email', '$gebruikersnaam', '$paswoord', '$straat', '$huisnummer', '$postcode', '$plaats', '$land', '$mobielnummer', '$ID')";
     mysqli_query($conn, $sql);
 
-    if ($rol == "regular")
-    $sql = "INSERT INTO regular (per wanneer)
-    VALUES('$indienst')";
+}
+
+    elseif ($rol == "regular") {
+    $sql = "INSERT INTO regular (perwanneer)
+    VALUES('$perwanneer')";
     mysqli_query($conn, $sql);
     $id = mysqli_insert_id($conn);
     $sql = "INSERT INTO user (voornaam, tussenvoegsel, achternaam, geslacht, email, gebruikersnaam, paswoord, straat, huisnummer, postcode, plaats, land, mobielnummer, regularID) 
 
     VALUES ('$voornaam', '$tussenvoegsel', '$achternaam', '$geslacht', '$email', '$gebruikersnaam', '$paswoord', '$straat', '$huisnummer', '$postcode', '$plaats', '$land', '$mobielnummer', '$ID')";
     mysqli_query($conn, $sql);
-
-    if ($rol == "manager")
-    $sql = "INSERT INTO manager (aantalmensen)
-    VALUES('$indienst')";
+}
+    elseif ($rol == "manager") {
+    $sql = "INSERT INTO manager (afdeling, aantalmensen)
+    VALUES('$afdeling','$aantalmensen')";
     mysqli_query($conn, $sql);
     $id = mysqli_insert_id($conn);
     $sql = "INSERT INTO user (voornaam, tussenvoegsel, achternaam, geslacht, email, gebruikersnaam, paswoord, straat, huisnummer, postcode, plaats, land, mobielnummer, managerID) 
 
     VALUES ('$voornaam', '$tussenvoegsel', '$achternaam', '$geslacht', '$email', '$gebruikersnaam', '$paswoord', '$straat', '$huisnummer', '$postcode', '$plaats', '$land', '$mobielnummer', '$ID')";
     mysqli_query($conn, $sql);
-
-
-
-
-
+}
 
 if (mysqli_query($conn, $sql))
 {
