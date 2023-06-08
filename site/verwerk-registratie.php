@@ -1,19 +1,19 @@
 <?php
 
-$voornaam = $_POST['voornaam'];
-$tussenvoegsel = $_POST['tussenvoegsel'];
-$achternaam = $_POST['achternaam'];
-$geslacht = $_POST['geslacht'];
-$email = $_POST['email'];
-$gebruikersnaam = $_POST['gebruikersnaam'];
-$paswoord = $_POST['paswoord'];
-$straat = $_POST['straat'];
-$huisnummer = $_POST['huisnummer'];
-$postcode = $_POST['postcode'];
-$plaats = $_POST['plaats'];
-$land = $_POST['land'];
-$mobielnummer = $_POST['mobielnummer'];
-$rol = $_POST['rol'];
+$voornaam =         $_POST['voornaam'];
+$tussenvoegsel =    $_POST['tussenvoegsel'];
+$achternaam =       $_POST['achternaam'];
+$geslacht =         $_POST['geslacht'];
+$email =            $_POST['email'];
+$gebruikersnaam =   $_POST['gebruikersnaam'];
+$paswoord =         $_POST['paswoord'];
+$straat =           $_POST['straat'];
+$huisnummer =       $_POST['huisnummer'];
+$postcode =         $_POST['postcode'];
+$plaats =           $_POST['plaats'];
+$land =             $_POST['land'];
+$mobielnummer =     $_POST['mobielnummer'];
+$rol =              $_POST['rol'];
 
 $hashed_password = password_hash($paswoord, PASSWORD_DEFAULT);
 
