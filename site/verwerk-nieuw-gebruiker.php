@@ -14,15 +14,16 @@ $plaats =           $_POST['plaats'];
 $land =             $_POST['land'];
 $mobielnummer =     $_POST['mobielnummer'];
 $rol =              $_POST['rol'];
-
-$hashed_password = password_hash($paswoord, PASSWORD_DEFAULT);
+$indienst =         $_POST['indienst'];
+$perwanneer  =      $_POST['perwanneer'];
+$afdeling =         $_POST['afdeling'];
+$aantalmensen =     $_POST['aantalmensen'];
+$ID =               $_POST['ID'];
 
 require "database.php"; 
 
-
 //eerst record toevoegen aan juiste tabel // admin. regular, manager
 //$id = mysqli_insert_id($conn);
-
 
 if ($rol == "admin") {
     $sql = "INSERT INTO admin (indienst)
@@ -51,9 +52,9 @@ if ($rol == "admin") {
     VALUES('$afdeling','$aantalmensen')";
     mysqli_query($conn, $sql);
     $id = mysqli_insert_id($conn);
-    $sql = "INSERT INTO user (voornaam, tussenvoegsel, achternaam, geslacht, email, gebruikersnaam, paswoord, straat, huisnummer, postcode, plaats, land, mobielnummer, managerID) 
+    $sql = "INSERT INTO user (voornaam, tussenvoegsel, achternaam, geslacht, email, gebruikersnaam, paswoord, straat, huisnummer, postcode, plaats, land, mobielnummer, afdeling, aantalmensen,  managerID) 
 
-    VALUES ('$voornaam', '$tussenvoegsel', '$achternaam', '$geslacht', '$email', '$gebruikersnaam', '$paswoord', '$straat', '$huisnummer', '$postcode', '$plaats', '$land', '$mobielnummer', '$ID')";
+    VALUES ('$voornaam', '$tussenvoegsel', '$achternaam', '$geslacht', '$email', '$gebruikersnaam', '$paswoord', '$straat', '$huisnummer', '$postcode', '$plaats', '$land', '$mobielnummer', '$ID' '$aantalmensen' '$aantalmensen')";
     mysqli_query($conn, $sql);
 }
 
